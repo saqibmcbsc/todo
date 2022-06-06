@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constlayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/Orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/cardview"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_marginLeft="10dp"
+       app:cardCornerRadius="15dp">
+
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:src="@drawable/todo"/>
+
+
+
+   </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textwashing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clothes Washing"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/cardview"
+           app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/stylishfonts"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/Grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constlayout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

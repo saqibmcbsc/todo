@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
              recyclertodo.setAdapter(new ToDoAdapter(text,MainActivity.this));
 
 
+
+            // Program to count the occurrence of a given Character in String
              String str = "Cliffex";
              char c = 'f';
 

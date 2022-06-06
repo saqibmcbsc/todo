@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.To_Do.todoexample.Adapter.ToDoAdapter;
@@ -16,12 +17,12 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclertodo;
     ImageView imgadd;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                  text = Constants.getArrayList(MainActivity.this,"task");
              }
              recyclertodo.setAdapter(new ToDoAdapter(text,MainActivity.this));
+
+
+             //Give to arrays find which no in not present in second arrays
+             findmissing();
+             // remove duplicate value from array
+             removeDuplicate();
          }
 
 
@@ -68,7 +75,42 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    static void findmissing() {
+        int[] a = {1,2,3,4,5};
+        int[] b = {2,3,1,0,5};
 
+        for(int i = 0; i<a.length; i++) {
+
+            int j = 0;
+
+            for( j = 0; j<b.length; j++)
+                if(a[i] == b[j])
+                    break;
+
+            if(j == b.length)
+            Log.d("TAG", "findmissing: "+a[i]);
+
+        }
+
+
+    }
+
+    //duplicate array remove
+    public static void removeDuplicate() {
+        int[] c = {1,2,3,4,2,5,3};
+
+        HashSet<Integer> hs = new HashSet<>();
+
+        for(int i = 0; i<c.length; i++) {
+
+            hs.add(c[i]);
+
+        }
+
+        for(int no: hs) {
+            Log.d("TAG", "removeDuplicate: "+no+ "\t");
+        }
+    }
 
     @Override
     public void onBackPressed() {

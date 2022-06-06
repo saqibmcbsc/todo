@@ -1,5 +1,7 @@
 package com.To_Do.todoexample;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
              recyclertodo.setAdapter(new ToDoAdapter(text,MainActivity.this));
 
 
+             String str = "Cliffex";
+             char c = 'f';
+
+             Log.d("TAG", "onCreate: " +count(str,c));
+
+
              //Give to arrays find which no in not present in second arrays
              findmissing();
              // remove duplicate value from array
@@ -74,6 +82,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public static int count(String str,char c){
+
+      int  res = 0;
+
+      for (int i = 0; i<str.length(); i++){
+
+          if (str.charAt(i) == c)
+
+
+              res ++;
+      }
+
+      return res;
+    }
+
+
+
+    //Give to arrays find which no in not present in second arrays
 
     static void findmissing() {
         int[] a = {1,2,3,4,5};
